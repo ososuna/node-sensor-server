@@ -48,6 +48,6 @@ void loop()
         digitalWrite(LED_GREEN, HIGH);
     }
     
-    delay(2000);
+    delay(1000);
     
 }

@@ -45,8 +45,8 @@ class Server {
             this.app.get( this.sensorPath, ( req, res ) => {
                 res.json({
                     ok: true,
-                    temp: dataSensor[0],
-                    hum: dataSensor[1]
+                    hum: dataSensor[0],
+                    temp: dataSensor[1]
                 });
             })
 
