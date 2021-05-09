@@ -32,25 +32,21 @@ class Server {
 
     }
 
-    /*
-    routes() {
-        this.app.use( this.sensorPath, require('../routes/sensor'));
-    }*/
-
     getData() {
 
         let dataSensor;
 
         this.serial.parser.on( 'data',  ( data ) => {
             
-            dataSensor = data;
+            dataSensor = data.split('\n');
 
-            console.log( dataSensor );
+            console.log( `Humidity: ${ dataSensor[0] } %, Temperature: ${ dataSensor[1] } *C` );
             
             this.app.get( this.sensorPath, ( req, res ) => {
                 res.json({
                     ok: true,
-                    data: dataSensor,
+                    temp: dataSensor[0],
+                    hum: dataSensor[1]
                 });
             })
 

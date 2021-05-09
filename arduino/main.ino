@@ -29,13 +29,13 @@ void loop()
 	    return;
 	}
 
-	Serial.print("Humidity: ");
+	// Serial.print("Humidity: ");
 	Serial.print(h);
-	Serial.print(" %\t\n");
+	Serial.print("\n");
     // Serial.print("\n");
-	Serial.print("Temperature: ");
+	// Serial.print("Temperature: ");
 	Serial.print(t);
-	Serial.print(" *C ");
+	// Serial.print(" *C ");
     Serial.println("");
 
     if (t > 28.1)
