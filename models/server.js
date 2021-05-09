@@ -13,9 +13,6 @@ class Server {
         // Middlewares
         this.middlewares();
         
-        // Rutas de la aplicación
-        // this.routes();
-
         this.serial = new Serial();
     }
 
