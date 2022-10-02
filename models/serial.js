@@ -7,7 +7,7 @@ class Serial {
     constructor() {
 
         // Connect to Serial at port COM4
-        this.port = new SerialPort( 'COM4', {
+        this.port = new SerialPort( process.env.ARDUINO_PORT, {
             baudRate: 9600
         });
 
@@ -19,7 +19,7 @@ class Serial {
     }
 
     portError() {
-        // Validate port COM4 is working
+        // Validate port is working
         this.port.on( 'error', ( err ) => {
             console.log( err ); 
         });

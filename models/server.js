@@ -8,8 +8,8 @@ class Server {
     constructor() {
         // Express
         this.app = express();
-        // PORT 8080 at environment variables
-        this.port = process.env.PORT;
+        // PORT at environment variables
+        this.port = process.env.SERVER_PORT;
         // Http path
         this.sensorPath = '/api/sensor';
 
@@ -47,9 +47,8 @@ class Server {
             // Send temperature and humidity by get method
             this.app.get( this.sensorPath, ( req, res ) => {
                 res.json({
-                    ok: true,
-                    hum: dataSensor[0],
-                    temp: dataSensor[1]
+                    humidity: dataSensor[0],
+                    temperature: dataSensor[1]
                 });
             })
 
